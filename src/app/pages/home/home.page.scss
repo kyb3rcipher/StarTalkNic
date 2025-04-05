@@ -1,0 +1,68 @@
+ion-header {
+    ion-toolbar {
+        font-family: "Satisfy", cursive !important;
+        ion-title {
+            letter-spacing: 2px;
+            font-size: 1.8rem !important;
+        }
+    }
+}
+
+
+ion-content {
+    ion-list {
+        ion-list-header {
+            font-weight: 600;
+            font-size: 2rem;
+        }
+
+        ion-item {
+            .chat-header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+          
+              strong {
+                font-weight: bold;
+                font-size: 1.2rem;
+              }
+          
+              .chat-time {
+                font-size: 0.9rem;
+              }
+            }
+          
+            ion-label p {
+              margin-top: 3px;
+            }
+          }          
+    }
+}
+
+
+ion-footer {
+    ion-toolbar {
+        ion-segment {
+            --background: var(--ion-color-light);
+            ion-segment-button {
+                flex-direction: column;
+                --color-checked: var(--ion-color-light-contrast);
+                ion-icon {
+                  font-size: 1.7rem;
+                }
+                ion-label {
+                  font-size: 0.75rem;
+                  margin-top: 2px;
+                }
+            }
+        }
+    }
+}
+
+.custom-add-button {
+    width: 32px;
+    height: 32px;
+    --padding-start: 0;
+    --padding-end: 0;
+  }
+  

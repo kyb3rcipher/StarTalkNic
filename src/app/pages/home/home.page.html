@@ -1,0 +1,80 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>StarTalkNic</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear" id="popover"><ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-popover #popover trigger="popover" trigerAction="click">
+    <ng-template>
+      <ion-content class="ion-padding ion-text-center" (click)="logout()">
+        <ion-label color="danger">
+          LOGOUT
+        </ion-label>
+      </ion-content>
+    </ng-template>
+  </ion-popover>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list *ngIf="segment == 'chats'">
+    <ion-list-header>
+      Chats
+      <ion-button shape="round" size="small" color="primary" fill="solid" (click)="newChat()">
+        <ion-icon name="add-outline" slot="icon-only" color="light" style="font-size: 1.4rem; font-weight: bold;"></ion-icon>
+      </ion-button>      
+    </ion-list-header>
+
+    <ion-item detail>
+      <ion-avatar slot="start"><img [src]="'https://i.pravatar.cc/500'" /></ion-avatar>
+      <ion-label>
+        <div class="chat-header">
+          <strong>Galileo</strong>
+          <ion-text color="medium" class="chat-time">10:00 AM</ion-text>
+        </div>
+        <p>
+          <ion-text>
+            message
+          </ion-text>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-segment [scrollable]="true" [value]="segment" mode="md" (ionChange)="onSegmentChanged($event)">
+      
+      <ion-segment-button value="status">
+        <ion-icon [name]="segment === 'status' ? 'planet' : 'planet-outline'"></ion-icon>
+        <ion-label>Status</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="calls">
+        <ion-icon [name]="segment === 'calls' ? 'call' : 'call-outline'"></ion-icon>
+        <ion-label>Calls</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="chats">
+        <ion-icon [name]="segment === 'chats' ? 'chatbubble-ellipses' : 'chatbubble-ellipses-outline'"></ion-icon>
+        <ion-label>Chats</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="settings">
+        <ion-icon [name]="segment === 'settings' ? 'cog' : 'cog-outline'"></ion-icon>
+        <ion-label>Settings</ion-label>
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>
