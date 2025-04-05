@@ -1,0 +1,7 @@
+{
+  "name": "StarTalkNic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
