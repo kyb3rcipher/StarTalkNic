@@ -1,9 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="primary">
-    <ion-title>StarTalkNic</ion-title>
+<ion-header [translucent]="true" class="custom-header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button id="popover" shape="round" size="small" fill="solid" (click)="newChat()" style="--background: #F3F2F0; width: 35px; height: 35px; padding: 0;">
+        <ion-icon name="ellipsis-horizontal" slot="icon-only" style="font-size: 2rem; font-weight: bold; color: black;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
 
     <ion-buttons slot="end">
-      <ion-button fill="clear" id="popover"><ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon></ion-button>
+      <ion-button shape="round" size="small" fill="solid" (click)="newChat()" style="--background: #F3F2F0; width: 35px; height: 35px; padding: 0;">
+        <ion-icon name="camera" slot="icon-only" style="font-size: 2rem; font-weight: bold; color: black;"></ion-icon>
+      </ion-button>
+
+      <ion-button shape="round" size="small" color="primary" fill="solid" (click)="newChat()" style="width: 35px; height: 35px; padding: 0;">
+        <ion-icon name="add-outline" slot="icon-only" color="light" style="font-size: 1.2rem; font-weight: bold;"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 
@@ -26,12 +36,7 @@
   </ion-header>
 
   <ion-list *ngIf="segment == 'chats'">
-    <ion-list-header>
-      Chats
-      <ion-button shape="round" size="small" color="primary" fill="solid" (click)="newChat()">
-        <ion-icon name="add-outline" slot="icon-only" color="light" style="font-size: 1.4rem; font-weight: bold;"></ion-icon>
-      </ion-button>      
-    </ion-list-header>
+    <ion-list-header>Chats</ion-list-header>
 
     <ion-item detail>
       <ion-avatar slot="start"><img [src]="'https://i.pravatar.cc/500'" /></ion-avatar>
